@@ -31,6 +31,12 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
+  <property name="dockNestingEnabled">
+   <bool>true</bool>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="Line" name="line">
     <property name="geometry">
@@ -48,9 +54,9 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>236</x>
       <y>29</y>
-      <width>141</width>
+      <width>151</width>
       <height>61</height>
      </rect>
     </property>
@@ -112,7 +118,7 @@ color: white;</string>
      <rect>
       <x>40</x>
       <y>29</y>
-      <width>141</width>
+      <width>161</width>
       <height>61</height>
      </rect>
     </property>
@@ -253,7 +259,7 @@ color: white;</string>
      <rect>
       <x>427</x>
       <y>30</y>
-      <width>141</width>
+      <width>161</width>
       <height>61</height>
      </rect>
     </property>
@@ -339,20 +345,17 @@ color: white;</string>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>129</x>
-      <y>247</y>
-      <width>911</width>
-      <height>191</height>
+      <x>140</x>
+      <y>160</y>
+      <width>921</width>
+      <height>391</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_5">
-     <property name="spacing">
-      <number>45</number>
-     </property>
-     <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
       <layout class="QVBoxLayout" name="verticalLayout_5">
        <item>
-        <widget class="QLabel" name="label_8">
+        <widget class="QLabel" name="monLabel">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -392,6 +395,140 @@ color: white;</string>
         </widget>
        </item>
        <item>
+        <widget class="Line" name="line_8">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_12">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="styleSheet">
+              <string notr="true">font-size: 14px;</string>
+             </property>
+             <property name="text">
+              <string>Arrivée</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="monStartLabel">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;
+font-size: 22px;</string>
+             </property>
+             <property name="text">
+              <string>00h00</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="Line" name="line_7">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <item>
+            <widget class="QLabel" name="label_7">
+             <property name="styleSheet">
+              <string notr="true">font-size: 14px;</string>
+             </property>
+             <property name="text">
+              <string>Pause</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="monBreakLabel">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;
+font-size: 22px;</string>
+             </property>
+             <property name="text">
+              <string>00h00</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="Line" name="line_9">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QLabel" name="label_5">
+             <property name="styleSheet">
+              <string notr="true">font-size: 14px;</string>
+             </property>
+             <property name="text">
+              <string>Départ</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="monEndLabel">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;
+font-size: 22px;</string>
+             </property>
+             <property name="text">
+              <string>00h00</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="line_10">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QPushButton" name="mon_button">
          <property name="minimumSize">
           <size>
@@ -406,17 +543,17 @@ color: white;</string>
        </item>
       </layout>
      </item>
-     <item>
+     <item row="0" column="1">
       <widget class="Line" name="line_3">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
       </widget>
      </item>
-     <item>
+     <item row="0" column="2">
       <layout class="QVBoxLayout" name="verticalLayout_6">
        <item>
-        <widget class="QLabel" name="label_9">
+        <widget class="QLabel" name="tueLabel">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -456,6 +593,140 @@ color: white;</string>
         </widget>
        </item>
        <item>
+        <widget class="Line" name="line_19">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_13">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <item>
+            <widget class="QLabel" name="label_16">
+             <property name="styleSheet">
+              <string notr="true">font-size: 14px;</string>
+             </property>
+             <property name="text">
+              <string>Arrivée</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="tueStartLabel">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;
+font-size: 22px;</string>
+             </property>
+             <property name="text">
+              <string>00h00</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="Line" name="line_11">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_9">
+           <item>
+            <widget class="QLabel" name="label_18">
+             <property name="styleSheet">
+              <string notr="true">font-size: 14px;</string>
+             </property>
+             <property name="text">
+              <string>Pause</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="tueBreakLabel">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;
+font-size: 22px;</string>
+             </property>
+             <property name="text">
+              <string>00h00</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="Line" name="line_12">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_10">
+           <item>
+            <widget class="QLabel" name="label_20">
+             <property name="styleSheet">
+              <string notr="true">font-size: 14px;</string>
+             </property>
+             <property name="text">
+              <string>Départ</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="tueEndLabel">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;
+font-size: 22px;</string>
+             </property>
+             <property name="text">
+              <string>00h00</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="line_23">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QPushButton" name="tue_button">
          <property name="minimumSize">
           <size>
@@ -470,17 +741,17 @@ color: white;</string>
        </item>
       </layout>
      </item>
-     <item>
+     <item row="0" column="3">
       <widget class="Line" name="line_4">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
       </widget>
      </item>
-     <item>
+     <item row="0" column="4">
       <layout class="QVBoxLayout" name="verticalLayout_7">
        <item>
-        <widget class="QLabel" name="label_10">
+        <widget class="QLabel" name="wedLabel">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -520,6 +791,140 @@ color: white;</string>
         </widget>
        </item>
        <item>
+        <widget class="Line" name="line_20">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_14">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_11">
+           <item>
+            <widget class="QLabel" name="label_22">
+             <property name="styleSheet">
+              <string notr="true">font-size: 14px;</string>
+             </property>
+             <property name="text">
+              <string>Arrivée</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="wedStartLabel">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;
+font-size: 22px;</string>
+             </property>
+             <property name="text">
+              <string>00h00</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="Line" name="line_13">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_12">
+           <item>
+            <widget class="QLabel" name="label_24">
+             <property name="styleSheet">
+              <string notr="true">font-size: 14px;</string>
+             </property>
+             <property name="text">
+              <string>Pause</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="wedBreakLabel">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;
+font-size: 22px;</string>
+             </property>
+             <property name="text">
+              <string>00h00</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="Line" name="line_14">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_13">
+           <item>
+            <widget class="QLabel" name="label_26">
+             <property name="styleSheet">
+              <string notr="true">font-size: 14px;</string>
+             </property>
+             <property name="text">
+              <string>Départ</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="wedEndLabel">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;
+font-size: 22px;</string>
+             </property>
+             <property name="text">
+              <string>00h00</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="line_24">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QPushButton" name="wed_button">
          <property name="minimumSize">
           <size>
@@ -534,17 +939,17 @@ color: white;</string>
        </item>
       </layout>
      </item>
-     <item>
+     <item row="0" column="5">
       <widget class="Line" name="line_5">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
       </widget>
      </item>
-     <item>
+     <item row="0" column="6">
       <layout class="QVBoxLayout" name="verticalLayout_8">
        <item>
-        <widget class="QLabel" name="label_11">
+        <widget class="QLabel" name="thuLabel">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -584,6 +989,140 @@ color: white;</string>
         </widget>
        </item>
        <item>
+        <widget class="Line" name="line_21">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_15">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_14">
+           <item>
+            <widget class="QLabel" name="label_28">
+             <property name="styleSheet">
+              <string notr="true">font-size: 14px;</string>
+             </property>
+             <property name="text">
+              <string>Arrivée</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="thuStartLabel">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;
+font-size: 22px;</string>
+             </property>
+             <property name="text">
+              <string>00h00</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="Line" name="line_15">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_15">
+           <item>
+            <widget class="QLabel" name="label_30">
+             <property name="styleSheet">
+              <string notr="true">font-size: 14px;</string>
+             </property>
+             <property name="text">
+              <string>Pause</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="thuBreakLabel">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;
+font-size: 22px;</string>
+             </property>
+             <property name="text">
+              <string>00h00</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="Line" name="line_16">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_16">
+           <item>
+            <widget class="QLabel" name="label_32">
+             <property name="styleSheet">
+              <string notr="true">font-size: 14px;</string>
+             </property>
+             <property name="text">
+              <string>Départ</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="thuEndLabel">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;
+font-size: 22px;</string>
+             </property>
+             <property name="text">
+              <string>00h00</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="line_25">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QPushButton" name="thu_button">
          <property name="minimumSize">
           <size>
@@ -598,17 +1137,17 @@ color: white;</string>
        </item>
       </layout>
      </item>
-     <item>
+     <item row="0" column="7">
       <widget class="Line" name="line_6">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
       </widget>
      </item>
-     <item>
+     <item row="0" column="8">
       <layout class="QVBoxLayout" name="verticalLayout_9">
        <item>
-        <widget class="QLabel" name="label_12">
+        <widget class="QLabel" name="friLabel">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -644,6 +1183,140 @@ color: white;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line_22">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_16">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_17">
+           <item>
+            <widget class="QLabel" name="label_34">
+             <property name="styleSheet">
+              <string notr="true">font-size: 14px;</string>
+             </property>
+             <property name="text">
+              <string>Arrivée</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="friStartLabel">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;
+font-size: 22px;</string>
+             </property>
+             <property name="text">
+              <string>00h00</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="Line" name="line_17">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_18">
+           <item>
+            <widget class="QLabel" name="label_36">
+             <property name="styleSheet">
+              <string notr="true">font-size: 14px;</string>
+             </property>
+             <property name="text">
+              <string>Pause</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="friBreakLabel">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;
+font-size: 22px;</string>
+             </property>
+             <property name="text">
+              <string>00h00</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="Line" name="line_18">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_19">
+           <item>
+            <widget class="QLabel" name="label_38">
+             <property name="styleSheet">
+              <string notr="true">font-size: 14px;</string>
+             </property>
+             <property name="text">
+              <string>Départ</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="friEndLabel">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;
+font-size: 22px;</string>
+             </property>
+             <property name="text">
+              <string>00h00</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="line_26">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>

@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>707</width>
-    <height>363</height>
+    <height>381</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -22,7 +22,7 @@
   <property name="maximumSize">
    <size>
     <width>707</width>
-    <height>363</height>
+    <height>381</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -91,7 +91,7 @@
     <string notr="true">font-size: 12px;</string>
    </property>
    <property name="text">
-    <string>Version: 1.0.0 (Beta 2)</string>
+    <string>Version: 1.0.0 (Beta 3)</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -107,7 +107,7 @@
     <string notr="true">font-size: 12px;</string>
    </property>
    <property name="text">
-    <string>Made with Qt 5.15.0 MinGW 64bit (C++17)</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Made with Qt 5.15.0 MinGW 64bit (C++17) (&lt;a href=&quot;https://github.com/alexlegarnd/Chronos&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Source Github&lt;/span&gt;&lt;/a&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QTextEdit" name="textEdit">
@@ -173,7 +173,23 @@ p, li { white-space: pre-wrap; }
     <string notr="true">font-size: 12px;</string>
    </property>
    <property name="text">
-    <string>Installer/Updater made with Delphi 10.3 Community</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Installer made with Delphi 10.3 Community (&lt;a href=&quot;https://github.com/alexlegarnd/chronos-installer&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Source Github&lt;/span&gt;&lt;/a&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>310</y>
+     <width>541</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 12px;</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Installer Bootstrap made with Python 3 (&lt;a href=&quot;https://github.com/alexlegarnd/chronos-installer-bootstrap&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Source Github&lt;/span&gt;&lt;/a&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
  </widget>

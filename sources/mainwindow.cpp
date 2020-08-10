@@ -41,6 +41,9 @@ void MainWindow::init() {
     connect(ui->wed_button, &QPushButton::clicked, this, &MainWindow::edit);
     connect(ui->thu_button, &QPushButton::clicked, this, &MainWindow::edit);
     connect(ui->fri_button, &QPushButton::clicked, this, &MainWindow::edit);
+
+    highlightDayOfWeek();
+
     if (QFile::exists(get_save_file_path())) {
         open_save();
     } else {
@@ -50,6 +53,33 @@ void MainWindow::init() {
     }
     set_date_to_now();
     compute_time();
+}
+
+void MainWindow::highlightDayOfWeek() {
+    int dayOfWeek = QDate::currentDate().dayOfWeek();
+    switch (dayOfWeek) {
+        case 1: {
+            ui->monLabel->setText(QString("> %1 <").arg(ui->monLabel->text()));
+            break;
+        }
+        case 2: {
+            ui->tueLabel->setText(QString("> %1 <").arg(ui->tueLabel->text()));
+            break;
+        }
+        case 3: {
+            ui->wedLabel->setText(QString("> %1 <").arg(ui->wedLabel->text()));
+            break;
+        }
+        case 4: {
+            ui->thuLabel->setText(QString("> %1 <").arg(ui->thuLabel->text()));
+            break;
+        }
+        case 5: {
+            ui->friLabel->setText(QString("> %1 <").arg(ui->friLabel->text()));
+            break;
+        }
+        default: break;
+    }
 }
 
 void MainWindow::set_date_to_now() {
@@ -131,6 +161,9 @@ void MainWindow::compute_time() {
     ui->thu_time_label->setText(Tools::double_to_string_time(current_week.getThu().get_total()));
     ui->fri_time_label->setText(Tools::double_to_string_time(current_week.getFri().get_total()));
     ui->total_time_label->setText(Tools::double_to_string_time(current_week.total()));
+    updateStartLabel();
+    updateBreakLabel();
+    updateEndLabel();
 
     double late = 0.0;
     double overtime = 0.0;
@@ -144,6 +177,30 @@ void MainWindow::compute_time() {
 
     ui->late_time_label->setText(Tools::double_to_string_time((late > 0.0) ? late : 0.0));
     ui->overtime_time_label->setText(Tools::double_to_string_time((overtime > 0.0) ? overtime : 0.0));
+}
+
+void MainWindow::updateStartLabel() {
+    ui->monStartLabel->setText(current_week.getMon().get_start().toString("HH:mm"));
+    ui->tueStartLabel->setText(current_week.getTue().get_start().toString("HH:mm"));
+    ui->wedStartLabel->setText(current_week.getWed().get_start().toString("HH:mm"));
+    ui->thuStartLabel->setText(current_week.getThu().get_start().toString("HH:mm"));
+    ui->friStartLabel->setText(current_week.getFri().get_start().toString("HH:mm"));
+}
+
+void MainWindow::updateBreakLabel() {
+    ui->monBreakLabel->setText(QString("%1 min.").arg(current_week.getMon().get_time_break()));
+    ui->tueBreakLabel->setText(QString("%1 min.").arg(current_week.getTue().get_time_break()));
+    ui->wedBreakLabel->setText(QString("%1 min.").arg(current_week.getWed().get_time_break()));
+    ui->thuBreakLabel->setText(QString("%1 min.").arg(current_week.getThu().get_time_break()));
+    ui->friBreakLabel->setText(QString("%1 min.").arg(current_week.getFri().get_time_break()));
+}
+
+void MainWindow::updateEndLabel() {
+    ui->monEndLabel->setText(current_week.getMon().get_end().toString("HH:mm"));
+    ui->tueEndLabel->setText(current_week.getTue().get_end().toString("HH:mm"));
+    ui->wedEndLabel->setText(current_week.getWed().get_end().toString("HH:mm"));
+    ui->thuEndLabel->setText(current_week.getThu().get_end().toString("HH:mm"));
+    ui->friEndLabel->setText(current_week.getFri().get_end().toString("HH:mm"));
 }
 
 void MainWindow::edit() {

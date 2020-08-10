@@ -43,6 +43,13 @@ private:
     void init();
     void open_save();
     void save_to_file();
+
+    // UI Update
+    void updateStartLabel();
+    void updateBreakLabel();
+    void updateEndLabel();
+    void highlightDayOfWeek();
+
     QString get_save_file_path();
     Identifier get_identifier(QString objectName);
     Day modify_value(Day);

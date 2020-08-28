@@ -7,6 +7,8 @@
 #define SAVE_FILE_VERSION 1
 #define KEY_SAVE_FILE_VERSION "version"
 
+#include <QMouseEvent>
+#include <QGraphicsView>
 #include <QJsonArray>
 #include <QMainWindow>
 #include <QDir>
@@ -58,6 +60,16 @@ private:
     Week current_week;
     QMap<int, Week> weeks;
     QMap<QString, Identifier> objectId;
+
+    void mousePressEvent(QMouseEvent *event);
+    void mouseMoveEvent(QMouseEvent *event);
+    int m_nMouseClick_X_Coordinate;
+    int m_nMouseClick_Y_Coordinate;
+    int xmax;
+    int xmin;
+    int ymax;
+    int ymin;
+    inline bool isWidgetIsTitleBar();
 
 public slots:
     void compute_week_number(const QDateTime &dt);

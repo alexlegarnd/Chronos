@@ -6,7 +6,29 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->window_title->setText(this->windowTitle());
+    this->setWindowFlags(Qt::FramelessWindowHint);
     init();
+}
+
+void MainWindow::mousePressEvent(QMouseEvent *event) {
+    m_nMouseClick_X_Coordinate = event->x();
+    m_nMouseClick_Y_Coordinate = event->y();
+}
+
+void MainWindow::mouseMoveEvent(QMouseEvent *event) {
+    if (isWidgetIsTitleBar()) {
+        move(event->globalX() - m_nMouseClick_X_Coordinate ,
+             event->globalY() - m_nMouseClick_Y_Coordinate);
+    }
+
+}
+
+bool MainWindow::isWidgetIsTitleBar() {
+    return (m_nMouseClick_X_Coordinate >= xmin &&
+            m_nMouseClick_X_Coordinate < xmax &&
+            m_nMouseClick_Y_Coordinate >= ymin &&
+            m_nMouseClick_Y_Coordinate < ymax);
 }
 
 MainWindow::~MainWindow()
@@ -33,6 +55,10 @@ void MainWindow::init() {
     objectId.insert(ui->wed_button->objectName(), Identifier::wed);
     objectId.insert(ui->thu_button->objectName(), Identifier::thu);
     objectId.insert(ui->fri_button->objectName(), Identifier::fri);
+    xmax = ui->window_title->x() + ui->window_title->width();
+    xmin = ui->window_title->x();
+    ymax = ui->window_title->x() + ui->window_title->height();
+    ymin = ui->window_title->y();
     connect(ui->aboutButton, &QPushButton::clicked, this, &MainWindow::open_about);
     connect(ui->template_settings_button, &QPushButton::clicked, this, &MainWindow::edit_template);
     connect(ui->dateEdit, &QDateEdit::dateTimeChanged, this, &MainWindow::compute_week_number);

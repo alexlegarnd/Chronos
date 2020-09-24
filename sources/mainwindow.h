@@ -4,7 +4,7 @@
 #define KEY_TEMPLATE "template"
 #define KEY_WEEKS "weeks"
 #define SAVE_FILENAME "data.json"
-#define SAVE_FILE_VERSION 1
+#define SAVE_FILE_VERSION 2
 #define KEY_SAVE_FILE_VERSION "version"
 
 #include <QMouseEvent>
@@ -19,6 +19,8 @@
 #include <QMapIterator>
 #include <QMessageBox>
 #include <QTimer>
+#include <QProcess>
+#include <QDir>
 
 #include "week.h"
 #include "welcome.h"
@@ -45,12 +47,14 @@ private:
     void init();
     void open_save();
     void save_to_file();
+    void panic_dialog(QString text);
 
     // UI Update
     void updateStartLabel();
     void updateBreakLabel();
     void updateEndLabel();
     void highlightDayOfWeek();
+    void updateValidIcon();
 
     QString get_save_file_path();
     Identifier get_identifier(QString objectName);
@@ -60,6 +64,9 @@ private:
     Week current_week;
     QMap<int, Week> weeks;
     QMap<QString, Identifier> objectId;
+    int todayWeekNumber;
+    int dayOfWeek;
+    bool saveLoaded;
 
     void mousePressEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);

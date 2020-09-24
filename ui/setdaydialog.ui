@@ -34,14 +34,17 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>140</y>
-     <width>75</width>
+     <x>214</x>
+     <y>110</y>
+     <width>181</width>
      <height>23</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 12px</string>
+   </property>
    <property name="text">
-    <string>Valider</string>
+    <string>Enregistrer la modification</string>
    </property>
   </widget>
   <widget class="QTimeEdit" name="start_edit">
@@ -218,6 +221,22 @@ color: white;</string>
      </layout>
     </item>
    </layout>
+  </widget>
+  <widget class="QPushButton" name="validateButton">
+   <property name="geometry">
+    <rect>
+     <x>214</x>
+     <y>140</y>
+     <width>181</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 12px</string>
+   </property>
+   <property name="text">
+    <string>Définir l'horaire comme valide</string>
+   </property>
   </widget>
  </widget>
  <resources/>

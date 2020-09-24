@@ -67,8 +67,9 @@ void MainWindow::init() {
     connect(ui->wed_button, &QPushButton::clicked, this, &MainWindow::edit);
     connect(ui->thu_button, &QPushButton::clicked, this, &MainWindow::edit);
     connect(ui->fri_button, &QPushButton::clicked, this, &MainWindow::edit);
-
-    highlightDayOfWeek();
+    todayWeekNumber = QDate::currentDate().weekNumber();
+    dayOfWeek = QDate::currentDate().dayOfWeek();
+    saveLoaded = false;
 
     if (QFile::exists(get_save_file_path())) {
         open_save();
@@ -77,34 +78,42 @@ void MainWindow::init() {
         w.exec();
         week_template = w.get_result();
     }
-    set_date_to_now();
-    compute_time();
+    if (saveLoaded) {
+        set_date_to_now();
+        compute_time();
+    }
 }
 
 void MainWindow::highlightDayOfWeek() {
-    int dayOfWeek = QDate::currentDate().dayOfWeek();
-    switch (dayOfWeek) {
-        case 1: {
-            ui->monLabel->setText(QString("> %1 <").arg(ui->monLabel->text()));
-            break;
+    ui->monLabel->setText("Lundi");
+    ui->tueLabel->setText("Mardi");
+    ui->wedLabel->setText("Mercredi");
+    ui->thuLabel->setText("Jeudi");
+    ui->friLabel->setText("Friday");
+    if (todayWeekNumber == current_week.getWeekNumber()) {
+        switch (dayOfWeek) {
+            case 1: {
+                ui->monLabel->setText(QString("> %1 <").arg(ui->monLabel->text()));
+                break;
+            }
+            case 2: {
+                ui->tueLabel->setText(QString("> %1 <").arg(ui->tueLabel->text()));
+                break;
+            }
+            case 3: {
+                ui->wedLabel->setText(QString("> %1 <").arg(ui->wedLabel->text()));
+                break;
+            }
+            case 4: {
+                ui->thuLabel->setText(QString("> %1 <").arg(ui->thuLabel->text()));
+                break;
+            }
+            case 5: {
+                ui->friLabel->setText(QString("> %1 <").arg(ui->friLabel->text()));
+                break;
+            }
+            default: break;
         }
-        case 2: {
-            ui->tueLabel->setText(QString("> %1 <").arg(ui->tueLabel->text()));
-            break;
-        }
-        case 3: {
-            ui->wedLabel->setText(QString("> %1 <").arg(ui->wedLabel->text()));
-            break;
-        }
-        case 4: {
-            ui->thuLabel->setText(QString("> %1 <").arg(ui->thuLabel->text()));
-            break;
-        }
-        case 5: {
-            ui->friLabel->setText(QString("> %1 <").arg(ui->friLabel->text()));
-            break;
-        }
-        default: break;
     }
 }
 
@@ -127,16 +136,28 @@ void MainWindow::open_save() {
         for (QJsonValue val : arr) {
             weeks[val.toObject()["weekNumber"].toInt()] = Week::from_json(val.toObject());
         }
+        saveLoaded = true;
+    } else if (obj[KEY_SAVE_FILE_VERSION].toInt() < SAVE_FILE_VERSION) {
+        QString updater = QCoreApplication::applicationDirPath() + "/save-updater.exe";
+        if (QFile::exists(updater)) {
+            QProcess* process = new QProcess(this);
+            process->execute(updater, QStringList({"update"}));
+            delete process;
+            open_save();
+        } else {
+            panic_dialog("Cette application n'a pas pu démarrer car save-updater.exe est introuvable.\n"
+                         "La réinstallation de cette application peut corriger ce problème");
+        }
     } else {
-        QMessageBox msgBox;
-        msgBox.setText("Le fichier de sauvegarde n'est pas à jour, "
-                       "des changements ont été apporté a la structure du fichier lors de la dernière mise à jour");
-        msgBox.setInformativeText("Mettez à jour votre fichier de sauvegarde puis relancez l'application");
-        msgBox.setStandardButtons(QMessageBox::Ok);
-        msgBox.setDefaultButton(QMessageBox::Ok);
-        msgBox.exec();
-        QTimer::singleShot(0, this, &MainWindow::close);
+        panic_dialog("Votre fichier de sauvegarde a été enregistré depuis une version plus récente de Chronos\n"
+                     "Mettez à jour Chronos pour pouvoir utiliser ce fichier");
     }
+}
+
+void MainWindow::panic_dialog(QString text) {
+    QMessageBox::critical(this, tr("Chronos"), text,
+                                   QMessageBox::Ok, QMessageBox::Ok);
+    QTimer::singleShot(0, this, &MainWindow::close);
 }
 
 void MainWindow::save_to_file() {
@@ -178,6 +199,7 @@ void MainWindow::compute_week_number(const QDateTime &dt) {
         save_to_file();
     }
     compute_time();
+    highlightDayOfWeek();
 }
 
 void MainWindow::compute_time() {
@@ -190,6 +212,7 @@ void MainWindow::compute_time() {
     updateStartLabel();
     updateBreakLabel();
     updateEndLabel();
+    updateValidIcon();
 
     double late = 0.0;
     double overtime = 0.0;
@@ -203,6 +226,14 @@ void MainWindow::compute_time() {
 
     ui->late_time_label->setText(Tools::double_to_string_time((late > 0.0) ? late : 0.0));
     ui->overtime_time_label->setText(Tools::double_to_string_time((overtime > 0.0) ? overtime : 0.0));
+}
+
+void MainWindow::updateValidIcon() {
+    ui->mondayValidate->setVisible(current_week.getMon().get_validate());
+    ui->tuesdayValidate->setVisible(current_week.getTue().get_validate());
+    ui->wednesdayValidate->setVisible(current_week.getWed().get_validate());
+    ui->thurdayValidate->setVisible(current_week.getThu().get_validate());
+    ui->fridayValidate->setVisible(current_week.getFri().get_validate());
 }
 
 void MainWindow::updateStartLabel() {
@@ -254,7 +285,8 @@ void MainWindow::edit() {
 }
 
 Day MainWindow::modify_value(Day d) {
-    SetDayDialog sdd(d, this);
+    bool isNotValidable = (current_week.getWeekNumber() > todayWeekNumber);
+    SetDayDialog sdd(d, isNotValidable, this);
     int result = sdd.exec();
     if (result == QDialog::Accepted) {
         return sdd.get_result();

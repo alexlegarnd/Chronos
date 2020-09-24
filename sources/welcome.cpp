@@ -65,7 +65,7 @@ void Welcome::edit() {
 }
 
 Day Welcome::modify_value(Day d) {
-    SetDayDialog sdd(d, this);
+    SetDayDialog sdd(d, true, this);
     int result = sdd.exec();
     if (result == QDialog::Accepted) {
         return sdd.get_result();

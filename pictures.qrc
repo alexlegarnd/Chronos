@@ -5,5 +5,6 @@
         <file>pictures/calendar.png</file>
         <file>pictures/about.png</file>
         <file>pictures/banner.png</file>
+        <file>pictures/validate.png</file>
     </qresource>
 </RCC>

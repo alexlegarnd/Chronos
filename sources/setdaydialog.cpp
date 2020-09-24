@@ -1,11 +1,12 @@
 #include "setdaydialog.h"
 #include "ui_setdaydialog.h"
 
-SetDayDialog::SetDayDialog(Day d, QWidget *parent) :
+SetDayDialog::SetDayDialog(Day d, bool isNotValidable, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::SetDayDialog)
 {
     ui->setupUi(this);
+    ui->validateButton->setEnabled(!isNotValidable);
     this->d = d;
     init();
 }
@@ -21,6 +22,7 @@ void SetDayDialog::init() {
     ui->break_edit->setValue(d.get_time_break());
     connect(ui->start_edit, &QTimeEdit::timeChanged, this, &SetDayDialog::compute_time);
     connect(ui->end_edit, &QTimeEdit::timeChanged, this, &SetDayDialog::compute_time);
+    connect(ui->validateButton, &QPushButton::clicked, this, &SetDayDialog::validate);
     connect(ui->break_edit, static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged), this, &SetDayDialog::compute_time);
     ui->total_label->setText(Tools::double_to_string_time(d.get_total()));
 }
@@ -34,4 +36,9 @@ void SetDayDialog::compute_time() {
 
 Day SetDayDialog::get_result() {
     return d;
+}
+
+void SetDayDialog::validate() {
+    d.set_validate(true);
+    accept();
 }

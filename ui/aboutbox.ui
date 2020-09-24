@@ -91,7 +91,7 @@
     <string notr="true">font-size: 12px;</string>
    </property>
    <property name="text">
-    <string>Version: 1.0.0 (Beta 4)</string>
+    <string>Version: 1.0.0 (Beta 5)</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">

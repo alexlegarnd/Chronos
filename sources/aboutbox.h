@@ -2,6 +2,7 @@
 #define ABOUTBOX_H
 
 #include <QDialog>
+#include <QMouseEvent>
 #include <iostream>
 
 namespace Ui {
@@ -18,6 +19,16 @@ public:
 
 private:
     Ui::AboutBox *ui;
+
+    void mousePressEvent(QMouseEvent *event);
+    void mouseMoveEvent(QMouseEvent *event);
+    int m_nMouseClick_X_Coordinate;
+    int m_nMouseClick_Y_Coordinate;
+    int xmax;
+    int xmin;
+    int ymax;
+    int ymin;
+    inline bool isWidgetIsTitleBar();
 };
 
 #endif // ABOUTBOX_H

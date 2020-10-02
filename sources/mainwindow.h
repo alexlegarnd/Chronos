@@ -21,6 +21,7 @@
 #include <QTimer>
 #include <QProcess>
 #include <QDir>
+#include <QtWinExtras/QtWin>
 
 #include "week.h"
 #include "welcome.h"

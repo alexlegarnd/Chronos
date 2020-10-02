@@ -55,10 +55,10 @@ void MainWindow::init() {
     objectId.insert(ui->wed_button->objectName(), Identifier::wed);
     objectId.insert(ui->thu_button->objectName(), Identifier::thu);
     objectId.insert(ui->fri_button->objectName(), Identifier::fri);
-    xmax = ui->window_title->x() + ui->window_title->width();
-    xmin = ui->window_title->x();
-    ymax = ui->window_title->x() + ui->window_title->height();
-    ymin = ui->window_title->y();
+    xmax = ui->titleBar->x() + ui->titleBar->width();
+    xmin = ui->titleBar->x();
+    ymax = ui->titleBar->x() + ui->titleBar->height();
+    ymin = ui->titleBar->y();
     connect(ui->aboutButton, &QPushButton::clicked, this, &MainWindow::open_about);
     connect(ui->template_settings_button, &QPushButton::clicked, this, &MainWindow::edit_template);
     connect(ui->dateEdit, &QDateEdit::dateTimeChanged, this, &MainWindow::compute_week_number);
@@ -89,7 +89,7 @@ void MainWindow::highlightDayOfWeek() {
     ui->tueLabel->setText("Mardi");
     ui->wedLabel->setText("Mercredi");
     ui->thuLabel->setText("Jeudi");
-    ui->friLabel->setText("Friday");
+    ui->friLabel->setText("Vendredi");
     if (todayWeekNumber == current_week.getWeekNumber()) {
         switch (dayOfWeek) {
             case 1: {

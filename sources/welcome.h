@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QDoubleSpinBox>
+#include <QMouseEvent>
 #include <math.h>
 
 #include "week.h"
@@ -42,6 +43,16 @@ private:
     void set_value_to_widget();
     Identifier get_identifier(QString objectName);
     Day modify_value(Day);
+
+    void mousePressEvent(QMouseEvent *event);
+    void mouseMoveEvent(QMouseEvent *event);
+    int m_nMouseClick_X_Coordinate;
+    int m_nMouseClick_Y_Coordinate;
+    int xmax;
+    int xmin;
+    int ymax;
+    int ymin;
+    inline bool isWidgetIsTitleBar();
 
 public slots:
     void edit();

@@ -10,19 +10,19 @@
     <x>0</x>
     <y>0</y>
     <width>419</width>
-    <height>177</height>
+    <height>192</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>419</width>
-    <height>177</height>
+    <height>192</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>419</width>
-    <height>177</height>
+    <height>192</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -34,8 +34,8 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>214</x>
-     <y>110</y>
+     <x>210</x>
+     <y>130</y>
      <width>181</width>
      <height>23</height>
     </rect>
@@ -50,8 +50,8 @@
   <widget class="QTimeEdit" name="start_edit">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>49</y>
+     <x>36</x>
+     <y>69</y>
      <width>91</width>
      <height>31</height>
     </rect>
@@ -73,8 +73,8 @@
   <widget class="QTimeEdit" name="end_edit">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>49</y>
+     <x>296</x>
+     <y>69</y>
      <width>91</width>
      <height>31</height>
     </rect>
@@ -96,8 +96,8 @@
   <widget class="QDoubleSpinBox" name="break_edit">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>49</y>
+     <x>166</x>
+     <y>69</y>
      <width>91</width>
      <height>31</height>
     </rect>
@@ -115,8 +115,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>9</y>
+     <x>36</x>
+     <y>29</y>
      <width>91</width>
      <height>31</height>
     </rect>
@@ -131,8 +131,8 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>9</y>
+     <x>166</x>
+     <y>29</y>
      <width>91</width>
      <height>31</height>
     </rect>
@@ -147,8 +147,8 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>9</y>
+     <x>296</x>
+     <y>29</y>
      <width>91</width>
      <height>31</height>
     </rect>
@@ -163,9 +163,9 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>103</y>
-     <width>141</width>
+     <x>36</x>
+     <y>123</y>
+     <width>143</width>
      <height>61</height>
     </rect>
    </property>
@@ -225,8 +225,8 @@ color: white;</string>
   <widget class="QPushButton" name="validateButton">
    <property name="geometry">
     <rect>
-     <x>214</x>
-     <y>140</y>
+     <x>210</x>
+     <y>160</y>
      <width>181</width>
      <height>23</height>
     </rect>
@@ -236,6 +236,115 @@ color: white;</string>
    </property>
    <property name="text">
     <string>Définir l'horaire comme valide</string>
+   </property>
+  </widget>
+  <widget class="QFrame" name="titleBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>419</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:1, stop:0 rgba(204, 22, 0, 255), stop:1 rgba(217, 0, 112, 255));</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="window_title">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>-1</y>
+      <width>281</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font-size: 11px;
+background: none;</string>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="closeButton">
+   <property name="geometry">
+    <rect>
+     <x>377</x>
+     <y>0</y>
+     <width>41</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe MDL2 Assets</family>
+    </font>
+   </property>
+   <property name="text">
+    <string></string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="Line" name="window_border_left">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>2</width>
+     <height>192</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: none;
+background-color: rgba(204, 22, 0, 255);</string>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="window_border_bottom">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>190</y>
+     <width>419</width>
+     <height>2</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: none;
+background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:1, stop:0 rgba(204, 22, 0, 255), stop:1 rgba(217, 0, 112, 255));</string>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="window_border_right">
+   <property name="geometry">
+    <rect>
+     <x>417</x>
+     <y>0</y>
+     <width>2</width>
+     <height>192</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: none;
+background-color: rgba(217, 0, 112, 255);</string>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
    </property>
   </widget>
  </widget>
@@ -254,6 +363,22 @@ color: white;</string>
     <hint type="destinationlabel">
      <x>209</x>
      <y>88</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>closeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SetDayDialog</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>397</x>
+     <y>10</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>209</x>
+     <y>95</y>
     </hint>
    </hints>
   </connection>

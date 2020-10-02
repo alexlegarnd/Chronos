@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1206</width>
-    <height>662</height>
+    <width>946</width>
+    <height>573</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1206</width>
-    <height>662</height>
+    <width>946</width>
+    <height>573</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1206</width>
-    <height>662</height>
+    <width>946</width>
+    <height>573</height>
    </size>
   </property>
   <property name="font">
@@ -41,8 +41,8 @@
    <widget class="Line" name="line">
     <property name="geometry">
      <rect>
-      <x>192</x>
-      <y>41</y>
+      <x>165</x>
+      <y>29</y>
       <width>20</width>
       <height>81</height>
      </rect>
@@ -54,8 +54,8 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>236</x>
-      <y>51</y>
+      <x>209</x>
+      <y>39</y>
       <width>151</width>
       <height>61</height>
      </rect>
@@ -116,8 +116,8 @@ color: white;</string>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>51</y>
+      <x>13</x>
+      <y>39</y>
       <width>161</width>
       <height>61</height>
      </rect>
@@ -175,90 +175,11 @@ color: white;</string>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>1022</x>
-      <y>45</y>
-      <width>153</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <widget class="QLabel" name="label">
-         <property name="font">
-          <font/>
-         </property>
-         <property name="text">
-          <string>Date :</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QDateEdit" name="dateEdit">
-         <property name="minimumSize">
-          <size>
-           <width>100</width>
-           <height>32</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>100</width>
-           <height>32</height>
-          </size>
-         </property>
-         <property name="font">
-          <font/>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">border: 1px solid white</string>
-         </property>
-         <property name="wrapping">
-          <bool>false</bool>
-         </property>
-         <property name="frame">
-          <bool>false</bool>
-         </property>
-         <property name="buttonSymbols">
-          <enum>QAbstractSpinBox::NoButtons</enum>
-         </property>
-         <property name="correctionMode">
-          <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
-         </property>
-         <property name="calendarPopup">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_semaine">
-       <property name="font">
-        <font/>
-       </property>
-       <property name="text">
-        <string>Semaine : 0</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
    <widget class="QWidget" name="layoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>427</x>
-      <y>52</y>
+      <x>400</x>
+      <y>40</y>
       <width>161</width>
       <height>61</height>
      </rect>
@@ -319,8 +240,8 @@ color: white;</string>
    <widget class="Line" name="line_2">
     <property name="geometry">
      <rect>
-      <x>378</x>
-      <y>42</y>
+      <x>351</x>
+      <y>30</y>
       <width>20</width>
       <height>81</height>
      </rect>
@@ -332,8 +253,8 @@ color: white;</string>
    <widget class="QPushButton" name="template_settings_button">
     <property name="geometry">
      <rect>
-      <x>930</x>
-      <y>622</y>
+      <x>670</x>
+      <y>530</y>
       <width>261</width>
       <height>31</height>
      </rect>
@@ -345,10 +266,10 @@ color: white;</string>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>182</y>
-      <width>921</width>
-      <height>391</height>
+      <x>44</x>
+      <y>140</y>
+      <width>861</width>
+      <height>351</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
@@ -1616,21 +1537,21 @@ font-size: 22px;</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>610</y>
-      <width>44</width>
-      <height>44</height>
+      <y>530</y>
+      <width>24</width>
+      <height>24</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>44</width>
-      <height>44</height>
+      <width>24</width>
+      <height>24</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>44</width>
-      <height>44</height>
+      <width>24</width>
+      <height>24</height>
      </size>
     </property>
     <property name="autoFillBackground">
@@ -1646,37 +1567,107 @@ font-size: 22px;</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="window_title">
+   <widget class="QFrame" name="titleBar">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>-1</y>
-      <width>1081</width>
-      <height>41</height>
+      <x>0</x>
+      <y>0</y>
+      <width>946</width>
+      <height>21</height>
      </rect>
     </property>
-    <property name="text">
-     <string>TextLabel</string>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:1, stop:0 rgba(204, 22, 0, 255), stop:1 rgba(217, 0, 112, 255));</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="window_title">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>-1</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+font-size: 11px;
+background: none;</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="Line" name="window_border_left">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>2</width>
+      <height>573</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+background-color: rgba(204, 22, 0, 255);</string>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="window_border_right">
+    <property name="geometry">
+     <rect>
+      <x>944</x>
+      <y>0</y>
+      <width>2</width>
+      <height>573</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+background-color: rgba(217, 0, 112, 255);</string>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="window_border_bottom">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>571</y>
+      <width>946</width>
+      <height>2</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:1, stop:0 rgba(204, 22, 0, 255), stop:1 rgba(217, 0, 112, 255));</string>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
    <widget class="QPushButton" name="closeButton">
     <property name="geometry">
      <rect>
-      <x>1156</x>
+      <x>904</x>
       <y>0</y>
-      <width>51</width>
-      <height>31</height>
+      <width>41</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Segoe MDL2 Assets</family>
-      <pointsize>-1</pointsize>
      </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border: none;
-font-size: 14px;</string>
     </property>
     <property name="text">
      <string></string>
@@ -1688,21 +1679,19 @@ font-size: 14px;</string>
    <widget class="QPushButton" name="minimizeButton">
     <property name="geometry">
      <rect>
-      <x>1101</x>
+      <x>862</x>
       <y>0</y>
-      <width>51</width>
-      <height>31</height>
+      <width>41</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Segoe MDL2 Assets</family>
-      <pointsize>-1</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">border: none;
-font-size: 14px;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string></string>
@@ -1711,6 +1700,90 @@ font-size: 14px;</string>
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>40</y>
+      <width>111</width>
+      <height>54</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QDateEdit" name="dateEdit">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="font">
+        <font/>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;</string>
+       </property>
+       <property name="wrapping">
+        <bool>false</bool>
+       </property>
+       <property name="frame">
+        <bool>false</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="readOnly">
+        <bool>false</bool>
+       </property>
+       <property name="buttonSymbols">
+        <enum>QAbstractSpinBox::NoButtons</enum>
+       </property>
+       <property name="correctionMode">
+        <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_semaine">
+       <property name="font">
+        <font/>
+       </property>
+       <property name="text">
+        <string>Semaine : 0</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <zorder>titleBar</zorder>
+   <zorder>line</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget_2</zorder>
+   <zorder>line_2</zorder>
+   <zorder>template_settings_button</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>aboutButton</zorder>
+   <zorder>window_border_left</zorder>
+   <zorder>window_border_right</zorder>
+   <zorder>window_border_bottom</zorder>
+   <zorder>closeButton</zorder>
+   <zorder>minimizeButton</zorder>
+   <zorder>dateEdit</zorder>
+   <zorder>label_semaine</zorder>
   </widget>
  </widget>
  <resources/>

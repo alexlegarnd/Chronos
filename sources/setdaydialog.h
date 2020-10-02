@@ -2,6 +2,7 @@
 #define SETDAYDIALOG_H
 
 #include <QDialog>
+#include <QMouseEvent>
 
 #include "day.h"
 #include "tools.h"
@@ -30,6 +31,16 @@ private:
     Day d;
 
     void init();
+
+    void mousePressEvent(QMouseEvent *event);
+    void mouseMoveEvent(QMouseEvent *event);
+    int m_nMouseClick_X_Coordinate;
+    int m_nMouseClick_Y_Coordinate;
+    int xmax;
+    int xmin;
+    int ymax;
+    int ymin;
+    inline bool isWidgetIsTitleBar();
 };
 
 #endif // SETDAYDIALOG_H

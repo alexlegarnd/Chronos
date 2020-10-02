@@ -6,6 +6,8 @@ Welcome::Welcome(Week wtemplate, QWidget *parent) :
     ui(new Ui::Welcome)
 {
     ui->setupUi(this);
+    ui->window_title->setText(this->windowTitle());
+    this->setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint);
     w = wtemplate;
     init();
 }
@@ -15,6 +17,26 @@ Welcome::~Welcome()
     delete ui;
 }
 
+void Welcome::mousePressEvent(QMouseEvent *event) {
+    m_nMouseClick_X_Coordinate = event->x();
+    m_nMouseClick_Y_Coordinate = event->y();
+}
+
+void Welcome::mouseMoveEvent(QMouseEvent *event) {
+    if (isWidgetIsTitleBar()) {
+        move(event->globalX() - m_nMouseClick_X_Coordinate ,
+             event->globalY() - m_nMouseClick_Y_Coordinate);
+    }
+
+}
+
+bool Welcome::isWidgetIsTitleBar() {
+    return (m_nMouseClick_X_Coordinate >= xmin &&
+            m_nMouseClick_X_Coordinate < xmax &&
+            m_nMouseClick_Y_Coordinate >= ymin &&
+            m_nMouseClick_Y_Coordinate < ymax);
+}
+
 void Welcome::init() {
     set_value_to_widget();
     objectId.insert(ui->mon_button->objectName(), Identifier::mon);
@@ -22,6 +44,10 @@ void Welcome::init() {
     objectId.insert(ui->wed_button->objectName(), Identifier::wed);
     objectId.insert(ui->thu_button->objectName(), Identifier::thu);
     objectId.insert(ui->fri_button->objectName(), Identifier::fri);
+    xmax = ui->titleBar->x() + ui->titleBar->width();
+    xmin = ui->titleBar->x();
+    ymax = ui->titleBar->x() + ui->titleBar->height();
+    ymin = ui->titleBar->y();
     connect(ui->mon_button, &QPushButton::clicked, this, &Welcome::edit);
     connect(ui->tue_button, &QPushButton::clicked, this, &Welcome::edit);
     connect(ui->wed_button, &QPushButton::clicked, this, &Welcome::edit);
